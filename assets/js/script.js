@@ -1,3 +1,5 @@
+const { createElement } = require("react");
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -37,13 +39,55 @@ const teamMembers = [
   },
 ];
 
+for(let i = 0; i < teamMembers.length; i++ ){
+//Ciclo -for che scorre l'array di oggetti "teamMembers"
+    const member = teamMembers[i]
+    //Variabile che salva, ad ogni giro, ogni singolo oggetto dell'array "teamMembers"
 
+    const row = createElement("div")
+    row.className = "row"
+    //Creo e salvo,in memoria, l'elemento -row. Aggiungo poi classi
 
+    const col = createElement("div")
+    col.className = "col-sm-12 col-md-4 mb-5"
+     //Creo e salvo,in memoria, l'elemento -col. Aggiungo poi classi
 
+    const card = createElement("div")
+    card.className ="card"
+    //Creo e salvo,in memoria, l'elemento -card. Aggiungo poi classi
 
+    const card_row = createElement("div")
+    card_row.className = "row"
+    //Creo e salvo,in memoria, l'elemento -card_row(riga interna alla -card). Aggiungo poi classi
 
+    const card_col_img = createElement("div")
+    card_col_img.className = "col-4"
+    //Creo e salvo,in memoria, l'elemento -card_col_img(colonna, dell'img, interna alla -card). Aggiungo poi classi
 
+    const card_img = createElement("img")
+    //Creo e salvo,in memoria, l'elemento -card_img(immagine interna alla -card).
 
+    const  card_col_body = createElement("div")
+    card_col_body.className = "col-8"
+    //Creo e salvo,in memoria, l'elemento -card_col_body(colonna, del body, interna alla -card). Aggiungo poi classi
+
+    const card_body = createElement("div")
+    card_body.className = "card-body"
+    //Creo e salvo,in memoria, l'elemento -card_body(body interno alla -card). Aggiungo poi classi
+
+    const card_title = createElement("h3")
+    card_title.className = "card-title"
+    //Creo e salvo,in memoria, l'elemento -card_title(titolo interno alla -card). Aggiungo poi classi
+
+    const card_text = createImageBitmap("p")
+    card_text.className = "card-text"
+    //Creo e salvo,in memoria, l'elemento -card_text(testointerno alla -card). Aggiungo poi classi
+
+    const card_link = createElement("a")
+    card_link.className = "card-link"
+    //Creo e salvo,in memoria, l'elemento -card_link(link interno alla -card). Aggiungo poi classi
+
+}
 
 
 
