@@ -38,16 +38,19 @@ const teamMembers = [
 ];
 
 
+const ancora = document.getElementById("ancora")
+//Selezione del nodo che accoglierà le card
 
+const row = document.createElement("div")
+    row.className = "row"
+    //Creo e salvo,in memoria, l'elemento -row. Aggiungo poi classi
 
 for(let i = 0; i < teamMembers.length; i++ ){
 //Ciclo -for che scorre l'array di oggetti "teamMembers"
     const member = teamMembers[i]
     //Variabile che salva, ad ogni giro, ogni singolo oggetto dell'array "teamMembers"
 
-    const row = document.createElement("div")
-    row.className = "row"
-    //Creo e salvo,in memoria, l'elemento -row. Aggiungo poi classi
+    //SEZIONE CREATEELEMENT()
 
     const col = document.createElement("div")
     col.className = "col-sm-12 col-md-4 mb-5"
@@ -72,7 +75,7 @@ for(let i = 0; i < teamMembers.length; i++ ){
 
 
     const  card_col_body = document.createElement("div")
-    card_col_body.className = "col-8"
+    card_col_body.className = "col-8 bg-dark text-white"
     //Creo e salvo,in memoria, l'elemento -card_col_body(colonna, del body, interna alla -card). Aggiungo poi classi
 
     const card_body = document.createElement("div")
@@ -82,16 +85,45 @@ for(let i = 0; i < teamMembers.length; i++ ){
     const card_title = document.createElement("h3")
     card_title.className = "card-title"
     //Creo e salvo,in memoria, l'elemento -card_title(titolo interno alla -card). Aggiungo poi classi
+    card_title.innerText = member.name
+    //Rimepio -card_title con il valore apposito prelevato da -member.
 
     const card_text = document.createElement("p")
     card_text.className = "card-text"
     //Creo e salvo,in memoria, l'elemento -card_text(testointerno alla -card). Aggiungo poi classi
+    card_text.innerText = member.role
+    //Rimepio -card_text con il valore apposito prelevato da -member.
 
     const card_link = document.createElement("a")
     card_link.className = "card-link"
     //Creo e salvo,in memoria, l'elemento -card_link(link interno alla -card). Aggiungo poi classi
-    
+    card_link.innerText = member.email
+    //Rimepio -card_link con il valore apposito prelevato da -member.
+
+    //SEZIONE APPEND()
+
+   card_col_body.append(card_body)
+   card_body.append(card_title, card_text, card_link)
+
+   card_col_img.append(card_img)
+
+   card_row.append(card_col_img , card_col_body)
+
+   card.append(card_row)
+
+   col.append(card)
+
+   row.append(col)
+   /*
+     In qusta sezione si è proceduto ad "appendere"(rendere figlio) tutti gli elementi figli
+     ad i loro rispettivi genitori. I genitori a suo volta sono stati "appesi" ai rispettivi genitori.
+     Ciò al fine di assicura una corretta visualizzazione del layout.
+   */
+    ancora.appendChild(row)
+    //La -row, completa di figli e "nipoti", viene carica nel DOM dentro al nodo "ancora"
 }
+
+
 
 
 
